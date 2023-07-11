@@ -1,2 +1,2 @@
 run-dist:
-	make -C run-dist
+	.\build\install\app\bin\app
