@@ -31,10 +31,17 @@ public class CalculatorGame {
         String chosenOperator = CALCULATOR_OPERATORS[mathOperator];
 
         switch (chosenOperator) {
-            case " + " -> questionAndAnswer[1] = String.valueOf(firstNumber + secondNumber);
-            case " - " -> questionAndAnswer[1] = String.valueOf(firstNumber - secondNumber);
-            case " * " -> questionAndAnswer[1] = String.valueOf(firstNumber * secondNumber);
-            default -> throw new IllegalStateException(WRONG_OPERATOR);
+            case " + ":
+                questionAndAnswer[1] = String.valueOf(firstNumber + secondNumber);
+                break;
+            case " - ":
+                questionAndAnswer[1] = String.valueOf(firstNumber - secondNumber);
+                break;
+            case " * ":
+                questionAndAnswer[1] = String.valueOf(firstNumber * secondNumber);
+                break;
+            default:
+                throw new IllegalStateException(WRONG_OPERATOR);
         }
         questionAndAnswer[0] = firstNumber + chosenOperator + secondNumber;
         return questionAndAnswer;
