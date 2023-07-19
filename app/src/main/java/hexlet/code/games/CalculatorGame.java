@@ -8,6 +8,8 @@ public class CalculatorGame {
     public static final String WRONG_OPERATOR = "Не верный оператор";
     private static final int LOWER_BORDER = 2;
     private static final int UPPER_BORDER = 50;
+    private static final int MATH_OPERATOR_ELECTOR_LOWER_BORDER = 0;
+    private static final int MATH_OPERATOR_ELECTOR_UPPER_BORDER = 2;
     private static final String[] CALCULATOR_OPERATORS = {" + ", " - ", " * "};
 
     public static void startCalculatorGame() {
@@ -26,8 +28,8 @@ public class CalculatorGame {
                 UPPER_BORDER);
         int secondNumber = RandomUtils.generateRandomNumber(LOWER_BORDER,
                 UPPER_BORDER);
-        int mathOperator = RandomUtils.generateRandomNumber(0,
-                2);
+        int mathOperator = RandomUtils.generateRandomNumber(MATH_OPERATOR_ELECTOR_LOWER_BORDER,
+                MATH_OPERATOR_ELECTOR_UPPER_BORDER);
         String chosenOperator = CALCULATOR_OPERATORS[mathOperator];
 
         switch (chosenOperator) {
