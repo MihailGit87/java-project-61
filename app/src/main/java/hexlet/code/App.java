@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class App {
     static final String INTRODUCTION_MESSAGE = "Please enter the game number and press Enter.";
     static final String GAMES_NUMERATION =
-            "1 - Greet\n2 - Even\n3 - Calc\n0 - Exit";
+            "1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n0 - Exit";
     static final String PLAYER_CHOICE = "Your choice: ";
     static final String GOODBYE_MESSAGE = "Good bye!";
     static final String WRONG_INPUT = "Please, input 1, 2, 3, 4 or 0.";
