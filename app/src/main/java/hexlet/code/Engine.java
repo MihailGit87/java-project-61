@@ -8,7 +8,7 @@ public class Engine {
     public static final String ANSWER_REQUEST = "Your answer: ";
     public static final String WRIGHT_ANSWER = "Correct!";
 
-    public static void runGame(String gameRule, String[][] questionsAnswersPairs) {
+    public static void runGame(String gameRule, String[][] questionsAndAnswers) {
         String playerName;
         Scanner scanner = new Scanner(System.in);
 
@@ -18,16 +18,16 @@ public class Engine {
         System.out.println(gameRule);
 
         for (int i = 0; i < ROUND_COUNT; i++) {
-            System.out.println("Question: " + questionsAnswersPairs[i][0]);
+            System.out.println("Question: " + questionsAndAnswers[i][0]);
             System.out.print(ANSWER_REQUEST);
             String playerAnswer = scanner.next();
 
-            if (playerAnswer.equals(questionsAnswersPairs[i][1])) {
+            if (playerAnswer.equals(questionsAndAnswers[i][1])) {
                 System.out.println(WRIGHT_ANSWER);
             } else {
                 System.out.println("'" + playerAnswer + "'"
                         + " is wrong answer ;(. Correct answer was"
-                        + " '" + questionsAnswersPairs[i][1] + "'.");
+                        + " '" + questionsAndAnswers[i][1] + "'.");
                 System.out.println("Let's try again, " + playerName + "!");
                 System.exit(0);
             }
