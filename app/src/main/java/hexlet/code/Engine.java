@@ -29,7 +29,7 @@ public class Engine {
                         + " is wrong answer ;(. Correct answer was"
                         + " '" + questionsAndAnswers[i][1] + "'.");
                 System.out.println("Let's try again, " + playerName + "!");
-                System.exit(0);
+                return;
             }
         }
         System.out.println("Congratulations, " + playerName + "!");

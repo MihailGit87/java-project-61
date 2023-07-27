@@ -8,17 +8,19 @@ public class ProgressionGame {
     private static final int PROGRESSION_MIN_SIZE = 5;
     private static final int PROGRESSION_MAX_SIZE = 10;
     private static final String EMPTY_PLACE_ELEMENT = "..";
+    public static final int LOWER_BORDER = 0;
+    public static final int UPPER_BORDER = 100;
 
     public static void startProgressionGame() {
         String[][] questionAndAnswer = new String[Engine.ROUND_COUNT][];
 
         for (int i = 0; i < Engine.ROUND_COUNT; i++) {
             int progressionArrayLength = RandomUtils.generateRandomNumber(PROGRESSION_MIN_SIZE, PROGRESSION_MAX_SIZE);
-            int progressionStep = RandomUtils.generateRandomNumber(RandomUtils.LOWER_BORDER,
-                    RandomUtils.UPPER_BORDER);
+            int progressionStep = RandomUtils.generateRandomNumber(LOWER_BORDER,
+                    UPPER_BORDER);
             int emptyPlaceNumber = RandomUtils.generateRandomNumber(0, progressionArrayLength - 1);
-            int firstElement = RandomUtils.generateRandomNumber(RandomUtils.LOWER_BORDER,
-                    RandomUtils.UPPER_BORDER);
+            int firstElement = RandomUtils.generateRandomNumber(LOWER_BORDER,
+                    UPPER_BORDER);
             questionAndAnswer[i] = makeProgression(progressionArrayLength,
                     progressionStep, emptyPlaceNumber, firstElement);
         }

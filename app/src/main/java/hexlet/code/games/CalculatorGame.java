@@ -16,12 +16,12 @@ public class CalculatorGame {
         String[][] questionAndAnswer = new String[Engine.ROUND_COUNT][];
 
         for (int i = 0; i < Engine.ROUND_COUNT; i++) {
-            questionAndAnswer[i] = generateQuestionAndAnswer();
+            questionAndAnswer[i] = generateGameData();
         }
         Engine.runGame(CALCULATOR_RULES, questionAndAnswer);
     }
 
-    public static String[] generateQuestionAndAnswer() {
+    public static String[] generateGameData() {
         String[] questionAndAnswer = new String[2];
 
         int firstNumber = RandomUtils.generateRandomNumber(LOWER_BORDER,
@@ -32,20 +32,17 @@ public class CalculatorGame {
                 MATH_OPERATOR_ELECTOR_UPPER_BORDER);
         String chosenOperator = CALCULATOR_OPERATORS[mathOperator];
 
-        switch (chosenOperator) {
-            case " + ":
-                questionAndAnswer[1] = String.valueOf(firstNumber + secondNumber);
-                break;
-            case " - ":
-                questionAndAnswer[1] = String.valueOf(firstNumber - secondNumber);
-                break;
-            case " * ":
-                questionAndAnswer[1] = String.valueOf(firstNumber * secondNumber);
-                break;
-            default:
-                throw new IllegalStateException(WRONG_OPERATOR);
-        }
         questionAndAnswer[0] = firstNumber + chosenOperator + secondNumber;
+        questionAndAnswer[1] = String.valueOf(calculate(firstNumber, secondNumber, chosenOperator));
         return questionAndAnswer;
+    }
+
+    public static int calculate(int firstNumber, int secondNumber, String chosenOperator) {
+        return switch (chosenOperator) {
+            case " + " -> firstNumber + secondNumber;
+            case " - " -> firstNumber - secondNumber;
+            case " * " -> firstNumber * secondNumber;
+            default -> throw new IllegalStateException(WRONG_OPERATOR);
+        };
     }
 }
