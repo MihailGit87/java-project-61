@@ -11,3 +11,6 @@ bin
 .project*
 .classpath
 .idea/s
+
+.gradle/
+build/
