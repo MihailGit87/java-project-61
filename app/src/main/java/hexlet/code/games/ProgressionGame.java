@@ -21,15 +21,15 @@ public class ProgressionGame {
             int emptyPlaceNumber = RandomUtils.generateRandomNumber(0, progressionArrayLength - 1);
             int firstElement = RandomUtils.generateRandomNumber(LOWER_BORDER,
                     UPPER_BORDER);
-            questionAndAnswer[i] = makeProgression(progressionArrayLength,
+            questionAndAnswer[i] = generateGameData(progressionArrayLength,
                     progressionStep, emptyPlaceNumber, firstElement);
         }
         Engine.runGame(PROGRESSION_RULE, questionAndAnswer);
     }
 
-    public static String[] makeProgression(int progressionArrayLength,
-                                           int progressionStep,
-                                           int emptyPlaceNumber, int firstElement) {
+    public static String[] generateGameData(int progressionArrayLength,
+                                            int progressionStep,
+                                            int emptyPlaceNumber, int firstElement) {
         String[] questionAnswerPair = new String[2];
         int[] intRoundProgression = formProgression(progressionArrayLength, progressionStep, firstElement);
         questionAnswerPair[1] = String.valueOf(intRoundProgression[emptyPlaceNumber]);
@@ -49,11 +49,9 @@ public class ProgressionGame {
 
     public static int[] formProgression(int progressionArrayLength, int progressionStep, int firstElement) {
         int[] intProgressionArray = new int[progressionArrayLength];
-        int insertElement = firstElement;
 
         for (int i = 0; i < progressionArrayLength; i++) {
-            intProgressionArray[i] = insertElement;
-            insertElement = insertElement + progressionStep;
+            intProgressionArray[i] = firstElement + progressionStep * i;
         }
         return intProgressionArray;
     }

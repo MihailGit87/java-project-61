@@ -9,22 +9,19 @@ import hexlet.code.games.ProgressionGame;
 import java.util.Scanner;
 
 public class App {
-    static final String INTRODUCTION_MESSAGE = "Please enter the game number and press Enter.";
-    static final String PLAYER_CHOICE = "Your choice: ";
-    static final String GOODBYE_MESSAGE = "Good bye!";
-    static final String WRONG_INPUT = "Please, input 1, 2, 3, 4, 5, 6 or 0.";
-
     public static void main(String[] args) {
-        System.out.println(INTRODUCTION_MESSAGE);
-        System.out.println("1 - Greet\n"
-                + "2 - Even\n"
-                + "3 - Calc\n"
-                + "4 - GCD\n"
-                + "5 - Progression\n"
-                + "6 - Prime\n"
-                + "0 - Exit");
+        System.out.println("Please enter the game number and press Enter.");
+        System.out.print("""
+                1 - Greet
+                2 - Even
+                3 - Calc
+                4 - GCD
+                5 - Progression
+                6 - Prime
+                0 - Exit
+                """);
         Scanner playerChoice = new Scanner(System.in);
-        System.out.print(PLAYER_CHOICE);
+        System.out.print("Your choice: ");
         String playerInteractionType = playerChoice.next();
         startSelectedGame(playerInteractionType);
         playerChoice.close();
@@ -38,8 +35,8 @@ public class App {
             case "4" -> GCDGame.startGCDGame();
             case "5" -> ProgressionGame.startProgressionGame();
             case "6" -> PrimeGame.startPrimeGame();
-            case "0" -> System.out.println(GOODBYE_MESSAGE);
-            default -> System.out.println(WRONG_INPUT);
+            case "0" -> System.out.println("Good bye!");
+            default -> System.out.println("Please, input 1, 2, 3, 4, 5, 6 or 0.");
         }
     }
 }

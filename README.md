@@ -2,6 +2,11 @@
 [![Actions Status](https://github.com/MihailGit87/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/MihailGit87/java-project-61/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/bc953fb0ab378995dab3/maintainability)](https://codeclimate.com/github/MihailGit87/java-project-61)
 
+Start
+make
+
+
+
 EvenGame
 ![Even](https://github.com/MihailGit87/hexlet-git/blob/main/EvenGameScreen.png)
 
